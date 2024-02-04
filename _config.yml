@@ -1,15 +1,15 @@
-title: My blog
-description: My very nice blog
-author: "Jorge Sanz"
+title: elkninja chronicles
+description: Putting the query in inquiry
+author: "Eddie Mitchell"
 
 theme: minima
 
-base_url: /gh-pages-minima-starter
-repository: jsanz/gh-pages-minima-starter
+base_url: /elkninja.github.io
+repository: elkninja/elkninja.github.io
 
 # Minima social links
-github_username: jsanz
-linkedin_username: jsanz
+github_username: elkninja
+linkedin_username: emitch
 rss: rss
 
 # Minima: show excerpts in the frontpage
