@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="150" cy="150" r="150" fill="#ECF0F1"/>
+  
+  <!-- Silhouette -->
+  <path d="M150 185C183.137 185 210 158.137 210 125C210 91.8629 183.137 65 150 65C116.863 65 90 91.8629 90 125C90 158.137 116.863 185 150 185Z" fill="#3498DB"/>
+  
+  <!-- Neck and Shoulders -->
+  <path d="M100 235V185C115 192 134 195 150 195C166 195 185 192 200 185V235H100Z" fill="#3498DB"/>
+  
+  <!-- Shoulders Extension -->
+  <path d="M100 235H60V255H240V235H200V235H100Z" fill="#2C3E50"/>
+  
+  <!-- Face Features (Minimal abstract representation) -->
+  <circle cx="130" cy="115" r="8" fill="#FFFFFF"/>
+  <circle cx="170" cy="115" r="8" fill="#FFFFFF"/>
+  <path d="M130 150C130 150 140 160 150 160C160 160 170 150 170 150" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Glasses -->
+  <rect x="120" y="105" width="20" height="20" rx="10" ry="10" stroke="#FFFFFF" stroke-width="3" fill="none"/>
+  <rect x="160" y="105" width="20" height="20" rx="10" ry="10" stroke="#FFFFFF" stroke-width="3" fill="none"/>
+  <line x1="140" y1="115" x2="160" y2="115" stroke="#FFFFFF" stroke-width="3"/>
+</svg>

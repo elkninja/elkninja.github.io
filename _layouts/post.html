@@ -1,0 +1,66 @@
+---
+layout: default
+---
+<article class="post">
+  <div class="wrapper">
+    <header class="post-header">
+      <h1 class="post-title">{{ page.title }}</h1>
+      <div class="post-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">
+          {{ page.date | date: "%B %-d, %Y" }}
+        </time>
+        {% if page.author %}
+          • <span class="post-author">{{ page.author }}</span>
+        {% endif %}
+        {% if page.categories.size > 0 %}
+          • 
+          <span class="post-categories">
+            {% for category in page.categories %}
+              <a href="{{ site.baseurl }}/categories/{{ category | slugify }}/">{{ category }}</a>
+              {%- unless forloop.last %}, {% endunless -%}
+            {% endfor %}
+          </span>
+        {% endif %}
+      </div>
+    </header>
+
+    {% if page.featured_image %}
+    <div class="post-featured-image">
+      <img src="{{ page.featured_image | relative_url }}" 
+          alt="{{ page.featured_image_alt | default: page.title }}"
+          srcset="{{ page.featured_image | relative_url }} 1x, 
+                  {{ page.featured_image_2x | default: page.featured_image | relative_url }} 2x">
+    </div>
+    {% endif %}
+
+    <div class="post-content">
+      {{ content }}
+    </div>
+
+    <footer class="post-footer">
+      {% include social-share.html %}
+      
+      {% if page.tags.size > 0 %}
+      <div class="post-tags">
+        <span>Tags:</span>
+        {% for tag in page.tags %}
+          <a href="{{ site.baseurl }}/tags/{{ tag | slugify }}/">#{{ tag }}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+      
+      {% if site.related_posts.size > 0 %}
+      <div class="related-posts">
+        <h3>Related Posts</h3>
+        <ul>
+          {% for related_post in site.related_posts limit:3 %}
+            <li>
+              <a href="{{ related_post.url | relative_url }}">{{ related_post.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+    </footer>
+  </div>
+</article>

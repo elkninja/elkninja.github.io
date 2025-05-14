@@ -1,0 +1,225 @@
+// Typography
+
+// Base text styles
+body {
+  font-feature-settings: "kern", "liga", "clig", "calt";
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Article typography
+.post-content, .page-content {
+  // Content is already constrained by wrapper
+  // Focus on styling and vertical spacing
+  > * {
+    max-width: 100%;
+    margin-bottom: $base-spacing;
+  }
+
+  // Allow wider elements for visual impact
+  > figure, > img, > pre, > .highlight, > blockquote, > table {
+    max-width: 100%;
+  }
+
+  // Paragraphs
+  p {
+    margin-bottom: $base-spacing;
+  }
+
+  // Links
+  a {
+    border-bottom: 1px solid rgba($secondary-color, 0.3);
+    transition: border-color $transition-speed $transition-timing;
+    
+    &:hover, &:focus {
+      border-color: $secondary-color;
+    }
+  }
+
+  // Lists
+  ul, ol {
+    margin-bottom: $base-spacing;
+    
+    li {
+      margin-bottom: $half-spacing / 2;
+    }
+  }
+
+  // Blockquotes
+  blockquote {
+    margin: $double-spacing 0;
+    padding: $base-spacing $base-spacing * 1.5;
+    border-left: 4px solid $secondary-color;
+    background-color: rgba($secondary-color, 0.05);
+    font-style: italic;
+    
+    p {
+      color: rgba($text-color, 0.85);
+    }
+    
+    cite {
+      font-style: normal;
+      font-weight: 500;
+    }
+  }
+
+  // Code
+  pre, code {
+    font-size: 0.85rem;
+  }
+
+  pre {
+    margin: $base-spacing 0;
+    padding: $base-spacing;
+    background-color: $light-gray;
+    border-radius: $border-radius;
+    overflow-x: auto;
+    
+    code {
+      padding: 0;
+      background-color: transparent;
+    }
+  }
+
+  code {
+    padding: 0.2em 0.4em;
+    background-color: rgba($secondary-color, 0.1);
+    border-radius: $border-radius;
+  }
+
+  // Headings with anchors
+  h1, h2, h3, h4, h5, h6 {
+    position: relative;
+    
+    &:hover {
+      .anchor {
+        opacity: 1;
+      }
+    }
+    
+    .anchor {
+      position: absolute;
+      left: -1.5em;
+      opacity: 0;
+      padding-right: 0.5em;
+      text-decoration: none;
+      transition: opacity $transition-speed $transition-timing;
+      
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  // Tables
+  table {
+    margin: $base-spacing 0;
+    width: 100%;
+    border-collapse: collapse;
+    
+    th, td {
+      padding: $half-spacing;
+      border: 1px solid $medium-gray;
+    }
+    
+    th {
+      background-color: $light-gray;
+      font-weight: 600;
+      text-align: left;
+    }
+    
+    tr:nth-child(even) {
+      background-color: rgba($light-gray, 0.5);
+    }
+  }
+
+  // Horizontal rule
+  hr {
+    margin: $double-spacing 0;
+    border: 0;
+    height: 1px;
+    background-color: $medium-gray;
+  }
+
+  // Footnotes
+  .footnotes {
+    margin-top: $double-spacing;
+    padding-top: $base-spacing;
+    border-top: 1px solid $medium-gray;
+    font-size: 0.9rem;
+    
+    ol {
+      padding-left: 1.5rem;
+    }
+    
+    li {
+      margin-bottom: $half-spacing;
+    }
+    
+    .footnote-backref {
+      margin-left: $half-spacing;
+    }
+  }
+
+  // Task lists
+  .task-list-item {
+    list-style-type: none;
+    
+    input[type="checkbox"] {
+      margin-right: $half-spacing / 2;
+      vertical-align: middle;
+    }
+  }
+}
+
+// Post titles
+.post-title, .page-title {
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+// Post meta
+.post-meta {
+  font-size: 0.9rem;
+  color: $dark-gray;
+  letter-spacing: 0.02em;
+}
+
+// Site title
+.site-title {
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+// Site description
+.site-description {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+// Footer headings
+.footer-heading {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+// Accessibility
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+// Captions
+figcaption, .image-caption {
+  font-size: 0.9rem;
+  color: $dark-gray;
+  text-align: center;
+  margin-top: $half-spacing;
+}

@@ -1,36 +1,78 @@
+# Site settings
 title: elkninja chronicles
 description: Producing results, one query at a time.
-author: "Eddie Mitchell"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "elkninja.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
-theme: minima
+# Author information
+author:
+  name: Eddie Mitchell
+  email: eddie.mitchell@live.com
 
-base_url: /elkninja.github.io
-repository: elkninja/elkninja.github.io
-
-# Minima social links
+# Social media
+twitter_username: emitch
 github_username: elkninja
 linkedin_username: emitch
-rss: rss
+email: eddie.mitchell@live.com
 
-# Minima: show excerpts in the frontpage
-show_excerpts: true
+# Build settings
+markdown: kramdown
+highlighter: rouge
 
-minima:
-  date_format: "%Y-%m-%d"
+# Permalink style
+permalink: /:year/:month/:day/:title/
 
-# Minima: custom header links
-header_pages:
-  - _pages/frontpage.md
-  - _pages/about.md
-  - _pages/archive.md
+# Pagination (temporarily disabled)
+# paginate: 5
+# paginate_path: "/page/:num/"
 
-include:
-    - _pages
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
 
-exclude: 
-    - .gitignore
-    - docker-compose.yml
-    - Gemfile
-    - Gemfile.lock
-    - LICENSE
-    - README.md
+# Default layout for different types of content
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "page"
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+  - gemfiles
+  - README.md
+  - LICENSE.txt
+  - .gitignore
+  - docker-compose.yml
+  - stage
+
+# Sass settings
+sass:
+  style: compressed
+  sass_dir: _sass

@@ -1,0 +1,223 @@
+// Responsive styles
+
+// Mobile (small devices)
+@media (max-width: $tablet-width - 1px) {
+  html {
+    font-size: 15px;
+  }
+  
+  .site-header {
+    .wrapper {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .site-branding {
+      margin-bottom: $base-spacing;
+      margin-right: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .site-nav {
+      display: none;
+      width: 100%;
+      
+      &.is-active {
+        display: block;
+      }
+      
+      .nav-menu {
+        flex-direction: column;
+        
+        .nav-item {
+          margin: $half-spacing 0;
+          margin-left: 0;
+          
+          &:first-child {
+            margin-top: 0;
+          }
+          
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    
+    .menu-toggle {
+      display: flex;
+      align-items: center;
+    }
+  }
+  
+  .footer-col-wrapper {
+    flex-direction: column;
+    
+    .footer-col {
+      margin-bottom: $base-spacing;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  .post-title, .page-title {
+    font-size: 2rem;
+  }
+  
+  .post-header, .page-header {
+    text-align: left;
+  }
+  
+  // Improve typography on smaller screens
+  .post-content, .page-content {
+    font-size: 0.95rem;
+    
+    h1 {
+      font-size: 1.8rem;
+    }
+    
+    h2 {
+      font-size: 1.5rem;
+    }
+    
+    h3 {
+      font-size: 1.3rem;
+    }
+    
+    blockquote {
+      margin-left: 0;
+      margin-right: 0;
+      padding: $base-spacing;
+    }
+  }
+}
+
+// Tablets and small desktops
+@media (min-width: $tablet-width) and (max-width: $desktop-width - 1px) {
+  .site-header {
+    .wrapper {
+      flex-wrap: wrap;
+    }
+    
+    .site-branding {
+      margin-bottom: $half-spacing;
+    }
+  }
+  
+  .footer-col-wrapper {
+    flex-wrap: wrap;
+    
+    .footer-col {
+      flex: 0 0 50%;
+      margin-bottom: $base-spacing;
+    }
+  }
+}
+
+// Medium screen adjustments
+@media (max-width: $desktop-width - 1px) {
+  html {
+    font-size: 16px;
+  }
+  
+  .post-featured-image {
+    margin-left: -$base-spacing;
+    margin-right: -$base-spacing;
+    
+    img {
+      border-radius: 0;
+    }
+  }
+}
+
+// Large desktops and above
+@media (min-width: $desktop-width) {
+  html {
+    font-size: 18px;
+  }
+  
+  .site-header {
+    padding: $base-spacing * 1.5 0;
+  }
+  
+  .site-title {
+    font-size: 2rem;
+  }
+  
+  // Make content wider on large screens
+  .wide-wrapper {
+    max-width: $wide-content-width;
+  }
+  
+  // Bigger images and full-width elements on large screens
+  .post-content, .page-content {
+    > figure, > img, > pre, > .highlight, > blockquote, > table {
+      margin-left: -$base-spacing;
+      margin-right: -$base-spacing;
+      max-width: $content-width + ($base-spacing * 2);
+    }
+  }
+}
+
+// Print styles
+@media print {
+  body {
+    font-size: 12pt;
+    color: #000;
+    background: #fff;
+  }
+  
+  .site-header, .site-footer, .social-share, .related-posts {
+    display: none;
+  }
+  
+  .post-title, .page-title {
+    font-size: 22pt;
+  }
+  
+  .post-meta {
+    font-size: 10pt;
+  }
+  
+  .post-content, .page-content {
+    a {
+      text-decoration: underline;
+      color: #000;
+      
+      &::after {
+        content: " (" attr(href) ") ";
+        font-size: 90%;
+        font-style: italic;
+      }
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      page-break-after: avoid;
+      page-break-inside: avoid;
+    }
+    
+    img, figure {
+      page-break-inside: avoid;
+      max-width: 100% !important;
+    }
+    
+    p, blockquote, ul, ol, dl, table {
+      orphans: 3;
+      widows: 3;
+    }
+    
+    blockquote, img, figure, table {
+      page-break-inside: avoid;
+    }
+  }
+  
+  a {
+    text-decoration: underline;
+    color: #000;
+  }
+}

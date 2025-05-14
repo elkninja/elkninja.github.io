@@ -1,0 +1,197 @@
+// Home page styles
+
+// Profile section
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: $double-spacing;
+  
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+    text-align: left;
+    align-items: flex-start;
+  }
+  
+  .profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: $base-spacing;
+    box-shadow: $box-shadow;
+    
+    @media (min-width: $tablet-width) {
+      margin-right: $double-spacing;
+      margin-bottom: 0;
+    }
+  }
+  
+  .profile-content {
+    flex: 1;
+    
+    .profile-title {
+      margin-top: 0;
+      font-size: 2rem;
+      color: $primary-color;
+    }
+    
+    .profile-subtitle {
+      font-size: 1.2rem;
+      color: $dark-gray;
+      margin-bottom: $base-spacing;
+    }
+    
+    .profile-bio {
+      margin-bottom: $base-spacing;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+  }
+}
+
+// Social links
+.social-links {
+  display: flex;
+  justify-content: center;
+  margin: $base-spacing 0;
+  
+  @media (min-width: $tablet-width) {
+    justify-content: flex-start;
+  }
+  
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: $base-spacing;
+    background-color: $light-gray;
+    color: $primary-color;
+    transition: background-color $transition-speed $transition-timing, 
+                color $transition-speed $transition-timing,
+                transform $transition-speed $transition-timing;
+    
+    &:hover, &:focus {
+      background-color: $primary-color;
+      color: white;
+      transform: translateY(-3px);
+      text-decoration: none;
+    }
+    
+    &:active {
+      transform: translateY(1px);
+    }
+    
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+    
+    &.github:hover, &.github:focus {
+      background-color: #24292e;
+    }
+    
+    &.linkedin:hover, &.linkedin:focus {
+      background-color: #0077b5;
+    }
+    
+    &.twitter:hover, &.twitter:focus {
+      background-color: #1da1f2;
+    }
+    
+    &.email:hover, &.email:focus {
+      background-color: $accent-color;
+    }
+  }
+}
+
+// Latest post section
+.latest-post-section {
+  margin-top: $double-spacing;
+  padding-top: $double-spacing;
+  border-top: 1px solid $medium-gray;
+  
+  .section-title {
+    margin-top: 0;
+    margin-bottom: $base-spacing;
+    color: $primary-color;
+    font-size: 1.5rem;
+  }
+  
+  .view-all-link {
+    margin-top: $base-spacing;
+    text-align: right;
+    
+    a {
+      font-weight: 500;
+      color: $secondary-color;
+      display: inline-flex;
+      align-items: center;
+      
+      &:hover, &:focus {
+        text-decoration: underline;
+      }
+    }
+  }
+  
+  .latest-post {
+    padding: $base-spacing;
+    border-radius: $border-radius;
+    background-color: $light-gray;
+    margin-bottom: $base-spacing;
+    transition: box-shadow $transition-speed $transition-timing,
+                transform $transition-speed $transition-timing;
+                
+    &:hover {
+      box-shadow: $box-shadow-hover;
+      transform: translateY(-3px);
+    }
+    
+    .post-title {
+      margin-top: 0;
+      font-size: 1.3rem;
+      
+      a {
+        color: $primary-color;
+        
+        &:hover, &:focus {
+          color: $secondary-color;
+          text-decoration: none;
+        }
+      }
+    }
+    
+    .post-meta {
+      margin-bottom: $half-spacing;
+      font-size: 0.9rem;
+      color: $dark-gray;
+    }
+    
+    .post-excerpt {
+      margin-bottom: $half-spacing;
+      
+      p {
+        margin-bottom: $half-spacing;
+      }
+    }
+    
+    .read-more {
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      
+      &:after {
+        content: "→";
+        margin-left: $half-spacing / 2;
+        transition: transform $transition-speed $transition-timing;
+      }
+      
+      &:hover:after {
+        transform: translateX(4px);
+      }
+    }
+  }
+}

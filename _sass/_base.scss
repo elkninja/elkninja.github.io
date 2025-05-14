@@ -1,0 +1,273 @@
+// Reset and base styles
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  color: $text-color;
+  background-color: $background-color;
+}
+
+// Links
+a {
+  color: $secondary-color;
+  text-decoration: none;
+  transition: color $transition-speed $transition-timing;
+  
+  &:hover, &:focus {
+    color: darken($secondary-color, 15%);
+    text-decoration: underline;
+  }
+  
+  &:active {
+    color: darken($secondary-color, 25%);
+  }
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font-family;
+  font-weight: 700;
+  line-height: $heading-line-height;
+  margin-top: $base-spacing;
+  margin-bottom: $half-spacing;
+  color: $primary-color;
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.3rem;
+}
+
+h5 {
+  font-size: 1.1rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+// Block elements
+p, blockquote, ul, ol, dl, pre, table, figure {
+  margin: 0 0 $base-spacing;
+}
+
+hr {
+  margin: $double-spacing 0;
+  border: 0;
+  border-top: 1px solid $medium-gray;
+}
+
+blockquote {
+  margin-left: 0;
+  margin-right: 0;
+  padding: $base-spacing;
+  border-left: 4px solid $secondary-color;
+  background-color: rgba($secondary-color, 0.05);
+  
+  > :last-child {
+    margin-bottom: 0;
+  }
+  
+  cite {
+    display: block;
+    margin-top: $half-spacing;
+    font-style: italic;
+    color: $dark-gray;
+    
+    &:before {
+      content: "— ";
+    }
+  }
+}
+
+// Lists
+ul, ol {
+  padding-left: $base-spacing;
+  
+  ul, ol {
+    margin: $half-spacing 0;
+  }
+}
+
+dl {
+  dt {
+    font-weight: bold;
+  }
+  
+  dd {
+    margin-left: $base-spacing;
+    margin-bottom: $half-spacing;
+  }
+}
+
+// Code
+code, pre, kbd, samp {
+  font-family: $monospace-font-family;
+  font-size: 0.9em;
+}
+
+code {
+  padding: 0.2em 0.4em;
+  background-color: rgba($secondary-color, 0.1);
+  border-radius: $border-radius;
+}
+
+pre {
+  padding: $base-spacing;
+  overflow-x: auto;
+  background-color: $light-gray;
+  border-radius: $border-radius;
+  
+  code {
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+  }
+}
+
+// Tables
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  
+  th, td {
+    padding: $half-spacing;
+    border-bottom: 1px solid $medium-gray;
+    text-align: left;
+  }
+  
+  th {
+    background-color: $light-gray;
+    font-weight: bold;
+  }
+}
+
+// Images
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: $base-spacing auto;
+}
+
+figure {
+  margin: $double-spacing 0;
+  
+  img {
+    margin: 0 auto;
+  }
+  
+  figcaption {
+    margin-top: $half-spacing;
+    text-align: center;
+    font-size: 0.9em;
+    color: $dark-gray;
+  }
+}
+
+// Form elements
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+input, textarea, select, button {
+  padding: $half-spacing;
+  border: 1px solid $medium-gray;
+  border-radius: $border-radius;
+  background-color: $background-color;
+  color: $text-color;
+  transition: border-color $transition-speed $transition-timing, box-shadow $transition-speed $transition-timing;
+  
+  &:focus {
+    outline: none;
+    border-color: $secondary-color;
+    box-shadow: 0 0 0 3px rgba($secondary-color, 0.2);
+  }
+}
+
+button, .button, input[type="button"], input[type="reset"], input[type="submit"] {
+  display: inline-block;
+  padding: $half-spacing $base-spacing;
+  background-color: $secondary-color;
+  color: white;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition: background-color $transition-speed $transition-timing, transform $transition-speed $transition-timing;
+  
+  &:hover, &:focus {
+    background-color: darken($secondary-color, 10%);
+    transform: translateY(-1px);
+    text-decoration: none;
+  }
+  
+  &:active {
+    background-color: darken($secondary-color, 15%);
+    transform: translateY(1px);
+  }
+}
+
+// Utility classes
+.wrapper {
+  max-width: $content-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $base-spacing;
+  padding-right: $base-spacing;
+}
+
+.wide-wrapper {
+  max-width: $wide-content-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $base-spacing;
+  padding-right: $base-spacing;
+}
+
+.clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
