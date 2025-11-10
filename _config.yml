@@ -2,7 +2,7 @@
 title: elkninja chronicles
 description: Producing results, one query at a time.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "elkninja.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://elkninja.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Author information
 author:
