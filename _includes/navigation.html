@@ -1,18 +1,21 @@
 <nav class="site-nav">
   <ul class="nav-menu">
     {% for item in site.data.navigation %}
+      {% assign show_item = false %}
+
+      {% if item.always_show %}
+        {% assign show_item = true %}
+      {% elsif item.show_if_posts and site.posts.size > 0 %}
+        {% assign show_item = true %}
+      {% elsif item.show_if_posts == false %}
+        {% assign show_item = true %}
+      {% endif %}
+
+      {% if show_item %}
       <li class="nav-item {% if page.url == item.url %}active{% endif %}">
         <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
       </li>
+      {% endif %}
     {% endfor %}
-    
-    {% if site.data.navigation == nil %}
-      <li class="nav-item {% if page.url == '/' %}active{% endif %}">
-        <a href="{{ '/' | relative_url }}">Home</a>
-      </li>
-      <li class="nav-item {% if page.url == '/about/' %}active{% endif %}">
-        <a href="{{ '/about/' | relative_url }}">About</a>
-      </li>
-    {% endif %}
   </ul>
 </nav>

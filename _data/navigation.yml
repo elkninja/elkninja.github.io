@@ -1,6 +1,9 @@
-- title: Me
+- title: Home
   url: /
+  always_show: true
 - title: Blogs
   url: /blogs/
+  show_if_posts: true
 - title: Presentations
   url: /presentations/
+  show_if_posts: false  # Set to true when you have presentations

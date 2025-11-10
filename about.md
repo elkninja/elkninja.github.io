@@ -4,30 +4,30 @@ title: About
 permalink: /about/
 ---
 
-# About Modern Minimalist
+## About Eddie Mitchell
 
-Modern Minimalist is a clean, elegant Jekyll theme designed for content-focused blogs and personal websites. Taking inspiration from popular publishing platforms like Medium and Ghost, this theme prioritizes readability and content presentation.
+Eddie Mitchell is a Search and Data Professional currently with Summit Racing Equipment. With nearly 20 years as an IT professional across infrastructure, networking, development, data, and architecture, his focus shifted to data and Search in 2015. He specializes in Microsoft SQL Server and the ELK Stack (Elasticsearch) for creating scalable solutions.
 
-## Features
+## Guiding Principles
 
-- **Clean Typography**: Optimized for comfortable reading with carefully selected font sizes, line heights, and spacing.
-- **Responsive Design**: Looks great on all devices, from mobile phones to large desktop screens.
-- **Minimalist Aesthetic**: Focuses on what matters most - your content - with subtle design elements that enhance without distracting.
-- **Modern Touches**: Smooth animations, well-designed navigation, and thoughtful social sharing options.
+Eddie's career is built on three guiding principles:
 
-## Design Philosophy
+- **"It depends"** - Context matters. There's rarely one perfect solution for every situation.
+- **"I don't know"** - Intellectual honesty and continuous learning are essential.
+- **"Let's do this"** - Action over endless planning. Learn by doing.
 
-We believe that great design gets out of the way. This theme was built with a focus on:
+## Expertise
 
-- **Readability First**: Typography is treated as a first-class citizen with careful attention to font choices, line length, and contrast.
-- **Meaningful Whitespace**: Generous spacing helps organize content and guides the reader through the page.
-- **Content Hierarchy**: Clear visual distinction between headings, body text, and supporting elements.
-- **Performance**: Optimized code and assets for fast loading times and smooth scrolling.
+- **Search**: Elasticsearch, ELK Stack, search architecture and optimization
+- **Data**: Data engineering, SQL Server, performance tuning, scalable solutions
+- **Technology**: Nearly 20 years across infrastructure, networking, development, and architecture
 
-## Getting Started
+## Connect
 
-This theme is easy to customize through the `_config.yml` file. You can change colors, fonts, and layout settings to match your personal style or brand.
+I'm always excited to connect with community members and tackle wild challenges.
 
-## Contact
+{% include social-links.html %}
 
-Have questions or suggestions? Feel free to reach out through [GitHub](https://github.com/) or connect on [Twitter](https://twitter.com/).
+---
+
+*This site shares insights, lessons learned, and technical deep-dives from years of working with search and data technologies. Producing results, one query at a time.*
