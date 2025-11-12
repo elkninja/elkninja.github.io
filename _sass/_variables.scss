@@ -1,12 +1,20 @@
-// Colors
-$primary-color: #2C3E50;    // Navy blue
-$secondary-color: #3498DB;   // Bright blue
+// Colors - Modern Tech Palette
+$primary-color: #0F172A;    // Deep slate (professional, modern)
+$secondary-color: #3B82F6;   // Vibrant blue (tech feel)
 $background-color: #FFFFFF;  // White
-$text-color: #333333;        // Dark grey
-$accent-color: #E74C3C;      // Coral
-$light-gray: #f6f6f6;
-$medium-gray: #e0e0e0;
-$dark-gray: #888888;
+$text-color: #1E293B;        // Slate grey (better readability)
+$accent-color: #06B6D4;      // Cyan (data/tech accent)
+$light-gray: #F8FAFC;        // Cooler light gray
+$medium-gray: #E2E8F0;       // Cooler medium gray
+$dark-gray: #64748B;         // Slate gray
+
+// Category/Badge Colors
+$category-search: #8B5CF6;   // Purple for Search
+$category-data: #06B6D4;     // Cyan for Data
+$category-sql: #F59E0B;      // Amber for SQL
+$category-elasticsearch: #10B981;  // Green for Elasticsearch
+$category-career: #EC4899;   // Pink for Career
+$category-tools: #6366F1;    // Indigo for Tools
 
 // Typography
 $base-font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";

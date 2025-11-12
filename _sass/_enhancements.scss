@@ -1,0 +1,231 @@
+// Enhanced Components - Visual Improvements
+
+// Category Badges
+.category-badge {
+  display: inline-block;
+  padding: 0.25em 0.75em;
+  margin: 0 0.25em 0.5em 0;
+  font-size: 0.875em;
+  font-weight: 600;
+  border-radius: $border-radius;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: transform $transition-speed $transition-timing, box-shadow $transition-speed $transition-timing;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $box-shadow-hover;
+  }
+
+  // Category-specific colors
+  &.search, &[data-category="search"] {
+    background-color: rgba($category-search, 0.1);
+    color: darken($category-search, 10%);
+    border: 1px solid rgba($category-search, 0.3);
+  }
+
+  &.data, &[data-category="data"] {
+    background-color: rgba($category-data, 0.1);
+    color: darken($category-data, 15%);
+    border: 1px solid rgba($category-data, 0.3);
+  }
+
+  &.sql, &[data-category="sql"] {
+    background-color: rgba($category-sql, 0.1);
+    color: darken($category-sql, 15%);
+    border: 1px solid rgba($category-sql, 0.3);
+  }
+
+  &.elasticsearch, &[data-category="elasticsearch"] {
+    background-color: rgba($category-elasticsearch, 0.1);
+    color: darken($category-elasticsearch, 15%);
+    border: 1px solid rgba($category-elasticsearch, 0.3);
+  }
+
+  &.career, &[data-category="career"] {
+    background-color: rgba($category-career, 0.1);
+    color: darken($category-career, 15%);
+    border: 1px solid rgba($category-career, 0.3);
+  }
+
+  &.tools, &[data-category="tools"] {
+    background-color: rgba($category-tools, 0.1);
+    color: darken($category-tools, 10%);
+    border: 1px solid rgba($category-tools, 0.3);
+  }
+}
+
+// Improved Code Blocks
+pre {
+  position: relative;
+  background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+  border: 1px solid rgba($secondary-color, 0.2);
+  border-radius: $border-radius-large;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  code {
+    color: #E2E8F0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+}
+
+// Inline code
+code {
+  background-color: rgba($secondary-color, 0.08);
+  border: 1px solid rgba($secondary-color, 0.15);
+  color: darken($secondary-color, 10%);
+  font-weight: 500;
+}
+
+// Enhanced Links
+a {
+  position: relative;
+
+  &:not(.button):not(.category-badge) {
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, $secondary-color, $accent-color);
+      transition: width $transition-speed $transition-timing;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
+
+// Profile Section Enhancement
+.profile-section {
+  position: relative;
+  padding: $double-spacing;
+  margin: -$double-spacing 0 $double-spacing;
+  background: linear-gradient(135deg, rgba($secondary-color, 0.03) 0%, rgba($accent-color, 0.03) 100%);
+  border-radius: $border-radius-large;
+  border: 1px solid $medium-gray;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, $secondary-color, $accent-color);
+    border-radius: $border-radius-large $border-radius-large 0 0;
+  }
+}
+
+.profile-image {
+  border: 4px solid $background-color;
+  box-shadow: 0 8px 16px rgba($secondary-color, 0.15);
+  transition: transform $transition-speed $transition-timing, box-shadow $transition-speed $transition-timing;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba($secondary-color, 0.25);
+  }
+}
+
+// Tech Stack Badges
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $half-spacing;
+  margin: $base-spacing 0;
+
+  .tech-item {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5em 1em;
+    background: linear-gradient(135deg, rgba($secondary-color, 0.08), rgba($accent-color, 0.08));
+    border: 1px solid rgba($secondary-color, 0.2);
+    border-radius: $border-radius-large;
+    font-size: 0.875em;
+    font-weight: 600;
+    color: $primary-color;
+    transition: all $transition-speed $transition-timing;
+
+    &:hover {
+      transform: translateY(-2px);
+      border-color: $secondary-color;
+      box-shadow: 0 4px 8px rgba($secondary-color, 0.2);
+    }
+
+    &::before {
+      content: '▪';
+      margin-right: 0.5em;
+      color: $accent-color;
+    }
+  }
+}
+
+// Card Hover Effects
+.post-item,
+.latest-post {
+  transition: transform $transition-speed $transition-timing, box-shadow $transition-speed $transition-timing;
+  border-radius: $border-radius-large;
+  padding: $base-spacing;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba($secondary-color, 0.12);
+  }
+}
+
+// Read More Button Enhancement
+.read-more {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75em 1.5em;
+  background: linear-gradient(135deg, $secondary-color, lighten($secondary-color, 10%));
+  color: white !important;
+  border-radius: $border-radius;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: all $transition-speed $transition-timing;
+  box-shadow: 0 2px 8px rgba($secondary-color, 0.3);
+
+  &::after {
+    content: ' →';
+    margin-left: 0.5em;
+    transition: margin-left $transition-speed $transition-timing;
+    background: none !important;
+    position: static;
+    width: auto;
+    height: auto;
+  }
+
+  &:hover {
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba($secondary-color, 0.4);
+
+    &::after {
+      margin-left: 1em;
+    }
+  }
+}
+
+// Social Links Enhancement
+.social-links a {
+  background-color: rgba($secondary-color, 0.08);
+  border-radius: 50%;
+  padding: $half-spacing;
+  transition: all $transition-speed $transition-timing;
+
+  &:hover {
+    background-color: $secondary-color;
+    transform: translateY(-4px) rotate(5deg);
+    box-shadow: 0 6px 16px rgba($secondary-color, 0.3);
+
+    svg {
+      path {
+        fill: white;
+      }
+    }
+  }
+}
