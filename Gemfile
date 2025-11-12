@@ -25,3 +25,6 @@ gem "http_parser.rb", "~> 0.8.0", :platforms => [:jruby]
 
 # Required for Ruby 3.0+
 gem "webrick"
+
+# Use sassc instead of sass-embedded (more stable in Docker)
+gem "jekyll-sass-converter", "~> 2.0"

@@ -1,80 +1,111 @@
 ---
 layout: post
-title: "Welcome to the Modern Minimalist Theme"
-date: 2025-05-14 09:00:00 -0400
-categories: [design, jekyll]
-tags: [theme, minimalist, tutorial]
-author: "Jane Designer"
-featured_image: "/assets/images/welcome-post.svg"
-featured_image_alt: "Minimalist desk setup with a notebook and coffee"
+title: "Draft Preview - This is What Your Posts Will Look Like"
+date: 2025-11-12
+categories: [Search, Data]
+author: Eddie Mitchell
+excerpt: "This is a placeholder draft to show you how posts will appear on your site. Delete this when you're ready to publish real content!"
 ---
 
-# Welcome to Modern Minimalist
+## 🚧 This is a Draft Preview
 
-Modern web design is increasingly embracing minimalism, focusing on essential elements and removing distractions. This theme embodies that philosophy with clean typography, ample whitespace, and thoughtful details that enhance the reading experience.
+**You're seeing this because you're running with `--drafts` enabled.**
 
-## The Power of Minimalism
+This post won't appear on your live site until you:
+1. Move it from `_drafts/` to `_posts/`
+2. Rename it with a date: `YYYY-MM-DD-title.md`
+3. Push to GitHub
 
-> "Perfection is achieved not when there is nothing more to add, but when there is nothing left to take away." — Antoine de Saint-Exupéry
+---
 
-In a world filled with distractions, minimalism helps focus attention on what truly matters: your content. By removing unnecessary elements and focusing on typography and spacing, this theme creates a pleasant reading environment for your audience.
+## Quick Workflow Reminder
 
-### Key Design Elements
+### Writing a new post:
+```bash
+# Copy a template
+cp _drafts/_TEMPLATE.md _drafts/my-new-idea.md
 
-The design of this theme incorporates several key elements:
+# Edit it, preview it
+# (You're previewing now!)
 
-1. **Typography First**: We've selected system fonts that look great across all devices while maintaining excellent readability.
-2. **Whitespace**: Generous spacing between elements helps organize content and improves reading comprehension.
-3. **Color Usage**: A restrained color palette with intentional accent colors guides the reader's eye.
-4. **Responsive Design**: Content looks perfect from mobile phones to large desktop displays.
-
-## Code Examples
-
-This theme also includes beautiful syntax highlighting for code blocks:
-
-```javascript
-// A simple JavaScript function
-function greet(name) {
-  return `Hello, ${name}! Welcome to Modern Minimalist.`;
-}
-
-console.log(greet('Developer'));
+# When ready, publish it
+mv _drafts/my-new-idea.md _posts/2025-11-12-my-new-idea.md
+git add _posts/2025-11-12-my-new-idea.md
+git commit -m "Publish: My New Idea"
+git push
 ```
 
-## Tables
+---
 
-Data presentation is clean and readable:
+## What Your Content Will Look Like
 
-| Feature | Description | Supported |
-|---------|-------------|-----------|
-| Responsive Design | Looks great on all devices | ✓ |
-| Custom Fonts | Easy typography customization | ✓ |
-| Dark Mode | Toggle between light and dark themes | Coming Soon |
-| SEO Optimized | Built-in meta tags for better visibility | ✓ |
+This is what your **Search and Data** posts will look like to readers.
 
-## Images
+### Code Examples
 
-Images are responsive and optimized for various screen sizes:
+Here's how SQL will render:
 
-![Placeholder image](https://picsum.photos/800/400)
-*Caption: Sample image with a caption demonstrating the image styling*
+```sql
+-- Example: Finding duplicate records
+SELECT
+    user_id,
+    COUNT(*) as duplicate_count
+FROM user_events
+GROUP BY user_id
+HAVING COUNT(*) > 1;
+```
 
-## Getting Started
+And Elasticsearch queries:
 
-Using this theme is simple. Start by creating your content in Markdown, and the theme will handle the rest. Here's how to create a new post:
+```json
+{
+  "query": {
+    "bool": {
+      "must": [
+        { "match": { "status": "active" } }
+      ],
+      "filter": [
+        { "range": { "created_at": { "gte": "2025-01-01" } } }
+      ]
+    }
+  }
+}
+```
 
-1. Create a new file in the `_posts` directory
-2. Add the front matter at the top (like this post)
-3. Write your content using Markdown
-4. Save and publish!
+### Lists and Formatting
 
-## What's Next?
+Your key takeaways will look like this:
 
-In future updates, we plan to add:
+- **Bold points** stand out
+- _Italic emphasis_ for nuance
+- `Inline code` for technical terms
+- Regular text for explanations
 
-- Dark mode toggle
-- Reading time estimates
-- Table of contents for longer posts
-- Improved search functionality
+### Tables
 
-Thank you for checking out the Modern Minimalist theme. We hope it provides a beautiful foundation for your content!
+Data tables render cleanly:
+
+| Metric | SQL Server | Elasticsearch |
+|--------|-----------|---------------|
+| Speed | Fast | Very Fast |
+| Scale | Vertical | Horizontal |
+| Use Case | Transactions | Search/Analytics |
+
+### Blockquotes
+
+> "It depends" - Every good architect's answer
+>
+> Context matters. There's rarely one perfect solution.
+
+---
+
+## Remember
+
+- This draft **won't appear** on your live site
+- The "Blogs" link **only shows** because drafts are being previewed
+- Delete this file when you publish your first real post
+- Check `CONTENT_WORKFLOW.md` for the complete guide
+
+---
+
+**Ready to write?** Create a GitHub Issue with your post idea, then use one of the templates in `_drafts/`!
