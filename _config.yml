@@ -22,15 +22,11 @@ highlighter: rouge
 # Permalink style
 permalink: /:year/:month/:day/:title/
 
-# Pagination (temporarily disabled)
-# paginate: 5
-# paginate_path: "/page/:num/"
-
-# Collections
-collections:
-  projects:
-    output: true
-    permalink: /projects/:path/
+# Collections (uncomment when you want to add a projects section)
+# collections:
+#   projects:
+#     output: true
+#     permalink: /projects/:path/
 
 # Default layout for different types of content
 defaults:
@@ -44,15 +40,9 @@ defaults:
       type: "pages"
     values:
       layout: "page"
-  - scope:
-      path: ""
-      type: "projects"
-    values:
-      layout: "page"
 
 # Plugins
 plugins:
-  - jekyll-paginate
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
@@ -67,6 +57,7 @@ exclude:
   - .jekyll-cache
   - gemfiles
   - README.md
+  - CONTENT_WORKFLOW.md
   - LICENSE.txt
   - .gitignore
   - docker-compose.yml
