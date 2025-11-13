@@ -1,5 +1,59 @@
 // Enhanced Components - Visual Improvements
 
+// Wider layout for homepage
+.home .wrapper {
+  max-width: $wide-content-width;
+}
+
+// Enhanced profile section layout
+.profile-section {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: $double-spacing * 1.5;
+  align-items: start;
+  text-align: left !important;
+
+  .profile-image {
+    width: 250px !important;
+    height: 250px !important;
+    margin: 0 auto !important;
+  }
+
+  .profile-content {
+    max-width: none;
+  }
+
+  .profile-title {
+    text-align: left;
+  }
+}
+
+// Mobile: stack vertically
+@media (max-width: $tablet-width) {
+  .profile-section {
+    grid-template-columns: 1fr;
+    text-align: center !important;
+    gap: $base-spacing;
+
+    .profile-image {
+      width: 200px !important;
+      height: 200px !important;
+    }
+
+    .profile-title {
+      text-align: center;
+    }
+  }
+
+  .social-links {
+    justify-content: center !important;
+  }
+
+  .tech-stack {
+    justify-content: center;
+  }
+}
+
 // Category Badges
 .category-badge {
   display: inline-block;
@@ -237,8 +291,8 @@ a {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: $base-spacing;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $base-spacing * 1.5;
   margin-top: $base-spacing;
 }
 
@@ -264,7 +318,7 @@ a {
 
   img {
     width: 100%;
-    height: 300px;
+    height: 400px;
     object-fit: cover;
     display: block;
     transition: transform $transition-speed $transition-timing;
