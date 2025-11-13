@@ -5,52 +5,49 @@ title: Home
 
 <div class="home">
   <div class="wrapper">
-    <!-- Hero Section: Profile + Gallery -->
+    <!-- Hero Section: Centered Profile -->
     <section class="hero-section">
-      <!-- Left: Profile -->
       <div class="profile-section">
         <img src="{{ '/assets/images/profile-400.jpg' | relative_url }}" alt="Eddie Mitchell - Search and Data Professional" class="profile-image">
 
-        <div class="profile-content">
-          <h1 class="profile-title">{{ site.author.name }}</h1>
-          <h2 class="profile-subtitle">Search and Data Professional</h2>
+        <h1 class="profile-title">{{ site.author.name }}</h1>
+        <h2 class="profile-subtitle">Search and Data Professional</h2>
 
-          <div class="profile-bio">
-            <p>
-            <strong>Eddie Mitchell</strong> is a Search and Data Professional currently with Summit Racing Equipment.  With nearly 20 years as an IT professional across infrastructure, networking, development, data, and architecture, his focus shifted to data and Search in 2015. He specializes in Microsoft SQL Server and the ELK Stack (Elasticsearch) for creating scalable solutions.
-            </p>
-            <p>
-            Eddie's career is built on three guiding principles: <em>"it depends,"</em> <em>"I don't know,"</em> and <em>"let's do this."</em> He's always excited to connect with community members and tackle wild challenges.
-            </p>
-          </div>
-
-          <div class="tech-stack">
-            <span class="tech-item">SQL Server</span>
-            <span class="tech-item">Elasticsearch</span>
-            <span class="tech-item">ELK Stack</span>
-            <span class="tech-item">Data Architecture</span>
-            <span class="tech-item">Search Solutions</span>
-          </div>
-
-          {% include social-links.html %}
+        <div class="profile-bio">
+          <p>
+          <strong>Eddie Mitchell</strong> is a Search and Data Professional currently with Summit Racing Equipment. With nearly 20 years as an IT professional across infrastructure, networking, development, data, and architecture, his focus shifted to data and Search in 2015. He specializes in Microsoft SQL Server and the ELK Stack (Elasticsearch) for creating scalable solutions.
+          </p>
+          <p>
+          Eddie's career is built on three guiding principles: <em>"it depends,"</em> <em>"I don't know,"</em> and <em>"let's do this."</em> He's always excited to connect with community members and tackle wild challenges.
+          </p>
         </div>
-      </div>
 
-      <!-- Right: Action Gallery -->
-      <div class="action-gallery">
-        <div class="gallery-grid">
-          <div class="gallery-item">
-            <img src="{{ '/assets/images/speaking-elastic.jpg' | relative_url }}" alt="Presenting at local meetups">
-            <p class="gallery-caption">Presenting at Meetups</p>
-          </div>
-          <div class="gallery-item">
-            <img src="{{ '/assets/images/conference-interview.jpg' | relative_url }}" alt="Conference interview">
-            <p class="gallery-caption">Community Engagement</p>
-          </div>
-          <div class="gallery-item">
-            <img src="{{ '/assets/images/keynote-speaking.jpg' | relative_url }}" alt="Conference session presentation">
-            <p class="gallery-caption">Conference Sessions</p>
-          </div>
+        <div class="tech-stack">
+          <span class="tech-item">SQL Server</span>
+          <span class="tech-item">Elasticsearch</span>
+          <span class="tech-item">ELK Stack</span>
+          <span class="tech-item">Data Architecture</span>
+          <span class="tech-item">Search Solutions</span>
+        </div>
+
+        {% include social-links.html %}
+      </div>
+    </section>
+
+    <!-- Action Gallery Section -->
+    <section class="action-gallery">
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="{{ '/assets/images/speaking-elastic.jpg' | relative_url }}" alt="Presenting at local meetups">
+          <p class="gallery-caption">Presenting at Meetups</p>
+        </div>
+        <div class="gallery-item">
+          <img src="{{ '/assets/images/conference-interview.jpg' | relative_url }}" alt="Conference interview">
+          <p class="gallery-caption">Community Engagement</p>
+        </div>
+        <div class="gallery-item">
+          <img src="{{ '/assets/images/keynote-speaking.jpg' | relative_url }}" alt="Conference session presentation">
+          <p class="gallery-caption">Conference Sessions</p>
         </div>
       </div>
     </section>

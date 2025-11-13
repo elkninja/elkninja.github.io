@@ -2,59 +2,54 @@
 
 // Wider layout for homepage
 .home .wrapper {
-  max-width: 1400px;
+  max-width: $wide-content-width;
   padding-left: $double-spacing;
   padding-right: $double-spacing;
 }
 
-// Hero Section: Profile + Gallery side-by-side
+// Hero Section: Centered profile
 .hero-section {
-  display: grid;
-  grid-template-columns: 480px 1fr;
-  gap: $double-spacing * 2;
-  align-items: start;
-  min-height: 85vh;
+  text-align: center;
+  padding: $double-spacing 0 $double-spacing * 1.5;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-// Profile section (left side)
+// Profile section
 .profile-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-
   .profile-image {
-    width: 220px !important;
-    height: 220px !important;
-    margin-bottom: $base-spacing !important;
-  }
-
-  .profile-content {
-    max-width: 100%;
+    width: 280px !important;
+    height: 280px !important;
+    margin: 0 auto $base-spacing * 1.5 !important;
   }
 
   .profile-title {
-    text-align: center;
-    font-size: 2rem;
-    margin-top: 0;
+    font-size: 2.75rem;
+    margin: 0 0 $half-spacing;
+    font-weight: 700;
   }
 
   .profile-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
+    color: $secondary-color;
+    font-weight: 500;
+    margin-bottom: $double-spacing;
   }
 
   .profile-bio {
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    text-align: left;
+    margin-bottom: $double-spacing;
 
     p {
-      margin-bottom: $base-spacing * 0.75;
+      margin-bottom: $base-spacing;
     }
   }
 
   .tech-stack {
     justify-content: center;
-    margin: $base-spacing 0;
+    margin: $double-spacing 0;
   }
 
   .social-links {
@@ -62,18 +57,29 @@
   }
 }
 
-// Mobile: stack vertically
-@media (max-width: 1200px) {
+// Mobile adjustments
+@media (max-width: $tablet-width) {
   .hero-section {
-    grid-template-columns: 1fr;
-    gap: $double-spacing;
-    min-height: auto;
+    padding: $base-spacing 0 $double-spacing;
   }
 
   .profile-section {
     .profile-image {
-      width: 200px !important;
-      height: 200px !important;
+      width: 220px !important;
+      height: 220px !important;
+    }
+
+    .profile-title {
+      font-size: 2rem;
+    }
+
+    .profile-subtitle {
+      font-size: 1.2rem;
+    }
+
+    .profile-bio {
+      font-size: 1rem;
+      text-align: center;
     }
   }
 }
@@ -308,19 +314,19 @@ a {
   }
 }
 
-// Action Gallery (right side)
+// Action Gallery (full width section)
 .action-gallery {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: $double-spacing * 2 0;
+  padding: $double-spacing 0;
+  background: linear-gradient(to bottom, rgba($light-gray, 0.3), transparent);
 }
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: $base-spacing;
-  width: 100%;
-  max-width: 600px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $double-spacing;
+  max-width: $wide-content-width;
+  margin: 0 auto;
 }
 
 .gallery-item {
@@ -345,8 +351,7 @@ a {
 
   img {
     width: 100%;
-    height: auto;
-    max-height: 280px;
+    height: 350px;
     object-fit: cover;
     object-position: center;
     display: block;
@@ -369,27 +374,13 @@ a {
 }
 
 // Responsive gallery
-@media (max-width: 1200px) {
-  .action-gallery {
-    margin-top: $double-spacing;
-  }
-
-  .gallery-grid {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: none;
-  }
-
-  .gallery-item img {
-    max-height: 250px;
-  }
-}
-
-@media (max-width: $tablet-width) {
+@media (max-width: 900px) {
   .gallery-grid {
     grid-template-columns: 1fr;
+    gap: $base-spacing;
   }
 
   .gallery-item img {
-    max-height: 300px;
+    height: 280px;
   }
 }
