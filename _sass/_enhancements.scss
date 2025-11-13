@@ -318,9 +318,11 @@ a {
 
   img {
     width: 100%;
-    height: 400px;
-    object-fit: cover;
+    height: auto;
+    aspect-ratio: 4/3;
+    object-fit: contain;
     display: block;
+    background-color: $light-gray;
     transition: transform $transition-speed $transition-timing;
   }
 
