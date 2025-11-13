@@ -2,55 +2,79 @@
 
 // Wider layout for homepage
 .home .wrapper {
-  max-width: $wide-content-width;
+  max-width: 1400px;
+  padding-left: $double-spacing;
+  padding-right: $double-spacing;
 }
 
-// Enhanced profile section layout
-.profile-section {
+// Hero Section: Profile + Gallery side-by-side
+.hero-section {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: $double-spacing * 1.5;
+  grid-template-columns: 480px 1fr;
+  gap: $double-spacing * 2;
   align-items: start;
-  text-align: left !important;
+  min-height: 85vh;
+}
+
+// Profile section (left side)
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 
   .profile-image {
-    width: 250px !important;
-    height: 250px !important;
-    margin: 0 auto !important;
+    width: 220px !important;
+    height: 220px !important;
+    margin-bottom: $base-spacing !important;
   }
 
   .profile-content {
-    max-width: none;
+    max-width: 100%;
   }
 
   .profile-title {
-    text-align: left;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 0;
   }
-}
 
-// Mobile: stack vertically
-@media (max-width: $tablet-width) {
-  .profile-section {
-    grid-template-columns: 1fr;
-    text-align: center !important;
-    gap: $base-spacing;
+  .profile-subtitle {
+    font-size: 1.1rem;
+  }
 
-    .profile-image {
-      width: 200px !important;
-      height: 200px !important;
+  .profile-bio {
+    font-size: 0.95rem;
+    line-height: 1.6;
+
+    p {
+      margin-bottom: $base-spacing * 0.75;
     }
+  }
 
-    .profile-title {
-      text-align: center;
-    }
+  .tech-stack {
+    justify-content: center;
+    margin: $base-spacing 0;
   }
 
   .social-links {
     justify-content: center !important;
   }
+}
 
-  .tech-stack {
-    justify-content: center;
+// Mobile: stack vertically
+@media (max-width: 1200px) {
+  .hero-section {
+    grid-template-columns: 1fr;
+    gap: $double-spacing;
+    min-height: auto;
+  }
+
+  .profile-section {
+    .profile-image {
+      width: 200px !important;
+      height: 200px !important;
+    }
   }
 }
 
@@ -284,16 +308,19 @@ a {
   }
 }
 
-// Action Gallery
+// Action Gallery (right side)
 .action-gallery {
-  margin: $double-spacing 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: $base-spacing * 1.5;
-  margin-top: $base-spacing;
+  grid-template-columns: 1fr;
+  gap: $base-spacing;
+  width: 100%;
+  max-width: 600px;
 }
 
 .gallery-item {
@@ -319,10 +346,10 @@ a {
   img {
     width: 100%;
     height: auto;
-    aspect-ratio: 4/3;
-    object-fit: contain;
+    max-height: 280px;
+    object-fit: cover;
+    object-position: center;
     display: block;
-    background-color: $light-gray;
     transition: transform $transition-speed $transition-timing;
   }
 
@@ -342,12 +369,27 @@ a {
 }
 
 // Responsive gallery
+@media (max-width: 1200px) {
+  .action-gallery {
+    margin-top: $double-spacing;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: none;
+  }
+
+  .gallery-item img {
+    max-height: 250px;
+  }
+}
+
 @media (max-width: $tablet-width) {
   .gallery-grid {
     grid-template-columns: 1fr;
   }
 
   .gallery-item img {
-    height: 250px;
+    max-height: 300px;
   }
 }
