@@ -7,7 +7,7 @@ title: Home
   <div class="wrapper">
     <!-- Profile Section -->
     <section class="profile-section">
-      <img src="{{ '/assets/images/profile.svg' | relative_url }}" alt="Profile Picture" class="profile-image">
+      <img src="{{ '/assets/images/profile-400.jpg' | relative_url }}" alt="Eddie Mitchell - Search and Data Professional" class="profile-image">
       
       <div class="profile-content">
         <h1 class="profile-title">{{ site.author.name }}</h1>
@@ -33,7 +33,25 @@ title: Home
         {% include social-links.html %}
       </div>
     </section>
-    
+
+    <!-- Action Shots Gallery -->
+    <section class="action-gallery">
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="{{ '/assets/images/speaking-elastic.jpg' | relative_url }}" alt="Speaking at Elastic on Vector and Hybrid Search">
+          <p class="gallery-caption">Presenting at Elastic</p>
+        </div>
+        <div class="gallery-item">
+          <img src="{{ '/assets/images/conference-interview.jpg' | relative_url }}" alt="Conference interview">
+          <p class="gallery-caption">Community Engagement</p>
+        </div>
+        <div class="gallery-item">
+          <img src="{{ '/assets/images/keynote-speaking.jpg' | relative_url }}" alt="Keynote speaking">
+          <p class="gallery-caption">Conference Speaking</p>
+        </div>
+      </div>
+    </section>
+
     <!-- Latest Blog Post Section -->
     {% if site.posts.size > 0 %}
     <section class="latest-post-section">
