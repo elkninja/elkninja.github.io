@@ -323,10 +323,16 @@ a {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
   gap: $double-spacing;
   max-width: 1200px;
   margin: 0 auto;
+
+  // First item (featured) spans full width
+  .gallery-featured {
+    grid-column: 1 / -1;
+  }
 }
 
 .gallery-item {
@@ -356,6 +362,11 @@ a {
     object-position: center;
     display: block;
     transition: transform $transition-speed $transition-timing;
+  }
+
+  // Featured image is taller
+  &.gallery-featured img {
+    height: 450px;
   }
 
   .gallery-caption {
